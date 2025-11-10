@@ -1,52 +1,53 @@
-print("Qarzhy shyǵyndaryn esepteý")
-atauy=input("Shyǵyn ataýy: ")
-somasy=float(input("Somasy (teńge): "))
-korshetkish=float(input("Kútiletin tabys (teńge): "))
-nat=korshetkish-somasy
-if nat>=0:
-    print(f"{atauy} tiimdi! Paıda: {nat} ₸")
+print("Қаржы шығындарын есептеу")
+atauy = input("Шығынның атауы: ")
+somasy = float(input("Сомасы (теңге): "))
+korshetkish = float(input("Күтілетін табыс (теңге): "))
+nat = korshetkish - somasy
+
+if nat >= 0:
+    print(f"{atauy} тиімді! Пайда: {nat} ₸")
 else:
-    print(f"{atauy} shyǵyn! Zalal: {abs(nat)} ₸")
+    print(f"{atauy} шығын! Залал: {abs(nat)} ₸")
 
-print("\nAılyq shyǵyndar tizimi")
-s_sanaty=["Tamaq", "Jol aqysy", "Kommunalka", "Tamaq", "Kiim"]
-print("Bastapqy tizim:", s_sanaty)
-b_emsiz=list(set(s_sanaty))
-print("Qaıtalanbaıtyn:", b_emsiz)
-bjudjet=float(input("Jalpy bjudjetti engiz (teńge): "))
-ozgerm=tuple(["Jalpy bjudjet", bjudjet])
-print("Kortej (ózgermeıtin):", ozgerm)
+print("\nАйлық шығындар тізімі")
+s_sanaty = ["Тамақ", "Жол ақысы", "Коммуналка", "Тамақ", "Киім"]
+print("Бастапқы тізім:", s_sanaty)
+b_emsiz = list(set(s_sanaty))
+print("Қайталанбайтын:", b_emsiz)
+bjudjet = float(input("Жалпы бюджет енгіз (теңге): "))
+ozgerm = tuple(["Жалпы бюджет", bjudjet])
+print("Кортеж (өзгермейтін):", ozgerm)
 
-print("\nMátindik izdeý")
-ataular=["tamaq", "jol aqysy", "kommunalka", "kiim"]
-izdeu=input("Qaı sanatty izdeısiz: ").lower()
+print("\nМәтіннен іздеу")
+ataular = ["тамақ", "жол ақысы", "коммуналка", "киім"]
+izdeu = input("Қай санатты іздейсіз: ").lower()
 if any(izdeu in a for a in ataular):
-    print(f"'{izdeu}' sanat tabyldy!")
+    print(f"'{izdeu}' санаты табылды!")
 else:
-    print(f"'{izdeu}' tizimde joq!")
+    print(f"'{izdeu}' тізімде жоқ!")
 
-print("\nShyǵyndar bazasy")
+print("\nШығындар базасы")
 shygyn_dict = {
-    "Tamaq": 60000,
-    "Jol aqysy": 15000,
-    "Kommunalka": 20000
+    "Тамақ": 60000,
+    "Жол ақысы": 15000,
+    "Коммуналка": 20000
 }
 
 for at, som in shygyn_dict.items():
     print(f"{at}: {som} ₸")
 
 while True:
-    print("\n1 – Shyǵyn qosy\n2 – Barlyǵyn kóru\n3 – Shyǵý")
-    tandau=input("Tańdaý: ")
-    if tandau=="1":
-        at=input("Sanat ataýy: ")
-        som=float(input("Somasy: "))
-        shygyn_dict[at]=som
-    elif tandau=="2":
+    print("\n1 – Шығын қосу\n2 – Барлығын көру\n3 – Шығу")
+    tandau = input("Таңдау: ")
+    if tandau == "1":
+        at = input("Санат атауы: ")
+        som = float(input("Сомасы: "))
+        shygyn_dict[at] = som
+    elif tandau == "2":
         for k, v in shygyn_dict.items():
             print(f"{k}: {v} ₸")
-    elif tandau=="3":
-        print("Baǵdarlama aıaqtaldy.")
+    elif tandau == "3":
+        print("Бағдарлама аяқталды.")
         break
     else:
-        print("Qate tańdaý!")
+        print("Қате таңдау!")
