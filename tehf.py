@@ -1,3 +1,4 @@
+#Бұл бағдарлама shygyn.csv файлын пайдаланады
 print("Қаржы шығындарын есептеу")
 def add_rec(data,n,amt):
     data[n]=amt
@@ -103,3 +104,4 @@ while True:
         print("Қате: нөлге бөлуге болмайды!")
     except Exception as e:
         print("Күтпеген қате:",e)
+
