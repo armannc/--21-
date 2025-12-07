@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="kz">
+<head>
+    <meta charset="UTF-8">
+    <title>Қаржы менеджері</title>
+
+    <style>
+        body {
+            margin: 0;
+            background: #f2f4f7;
+            font-family: Arial, sans-serif;
+        }
+
+        header {
+            background: #4a6cf7;
+            color: white;
+            padding: 20px 40px;
+            font-size: 26px;
+            font-weight: bold;
+        }
+
+        .container {
+            margin: 40px auto;
+            width: 90%;
+            max-width: 900px;
+        }
+
+        .card {
+            background: white;
+            padding: 25px;
+            border-radius: 14px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+            margin-bottom: 20px;
+        }
+
+        .title {
+            font-size: 22px;
+            margin-bottom: 10px;
+        }
+
+        .buttons {
+            display: flex;
+            gap: 20px;
+            margin-top: 10px;
+        }
+
+        .btn {
+            background: #4a6cf7;
+            color: white;
+            padding: 12px 20px;
+            border-radius: 10px;
+            text-decoration: none;
+            font-size: 16px;
+            font-weight: bold;
+            transition: 0.2s;
+        }
+
+        .btn:hover {
+            background: #3453d1;
+        }
+
+        .stats-box {
+            display: flex;
+            justify-content: space-between;
+            text-align: center;
+            margin-top: 20px;
+        }
+
+        .stat {
+            background: #ffffff;
+            padding: 20px;
+            border-radius: 12px;
+            width: 30%;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+        }
+
+        .stat h3 {
+            margin: 0;
+            font-size: 24px;
+            color: #4a6cf7;
+        }
+
+        .stat p {
+            margin-top: 5px;
+            color: #777;
+        }
+    </style>
+</head>
+
+<body>
+
+<header>
+    💰 Қаржы менеджері
+</header>
+
+<div class="container">
+
+    <div class="card">
+        <div class="title">Не істегіңіз келеді?</div>
+
+        <div class="buttons">
+            <a class="btn" href="{% url 'expenses:add_expense' %}">➕ Шығын қосу</a>
+            <a class="btn" href="{% url 'expenses:expense_list' %}">📄 Шығындар тізімі</a>
+            <a class="btn" href="{% url 'expenses:stats' %}">📊 Статистика</a>
+        </div>
+    </div>
+
+    <div class="card">
+        <div class="title">Жалпы ақпарат</div>
+
+        <div class="stats-box">
+
+            <div class="stat">
+                <h3>{{ total_expenses }}</h3>
+                <p>Жалпы шығын саны</p>
+            </div>
+
+            <div class="stat">
+                <h3>{{ last_expense }}</h3>
+                <p>Соңғы шығын(теңге)</p>
+            </div>
+
+        </div>
+
+
+    </div>
+
+
+</div>
+
+
+        </div>
+    </div>
+
+</div>
+
+</body>
+</html>

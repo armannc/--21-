@@ -1,0 +1,81 @@
+<h1>Шығын қосу беті</h1>
+<form method="POST">
+    {% csrf_token %}
+    <label>Категория:</label>
+    <select name="name">
+        {% for c in categories %}
+            <option value="{{ c }}">{{ c }}</option>
+        {% endfor %}
+    </select><br>
+    <label>Сома:</label>
+    <input type="number" name="amount" step="0.01"><br>
+    <label>Қосымша ақпарат:</label>
+    <input type="text" name="big_info"><br>
+    <button type="submit">Қосу</button>
+</form>
+<a href="{% url 'expenses:expense_list' %}">Барлық шығындар</a>
+
+<style>
+    body {
+        background: #f1f3f9;
+        font-family: Arial, sans-serif;
+    }
+
+    h1 {
+        text-align: center;
+        margin-bottom: 20px;
+    }
+
+    form {
+        background: white;
+        width: 380px;
+        margin: 0 auto;
+        padding: 25px;
+        border-radius: 12px;
+        box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+    }
+
+    label {
+        font-weight: bold;
+        display: block;
+        margin-top: 10px;
+    }
+
+    input, select {
+        width: 100%;
+        padding: 8px;
+        border-radius: 6px;
+        border: 1px solid #ccc;
+        margin-top: 5px;
+        margin-bottom: 10px;
+    }
+
+    button {
+        width: 100%;
+        padding: 10px;
+        background: #4a77f7;
+        color: white;
+        border: none;
+        border-radius: 6px;
+        font-size: 16px;
+        cursor: pointer;
+        margin-top: 10px;
+    }
+
+    button:hover {
+        background: #345de8;
+    }
+
+    a {
+        display: block;
+        text-align: center;
+        margin-top: 15px;
+        color: #4a77f7;
+        text-decoration: none;
+        font-weight: bold;
+    }
+
+    a:hover {
+        text-decoration: underline;
+    }
+</style>
